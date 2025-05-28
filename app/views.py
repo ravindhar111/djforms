@@ -15,4 +15,6 @@ def insert_school(request):
             sp=SFDO.cleaned_data['scprincipal']
             School.objects.get_or_create(scname=sn,sclocation=sl,scprincipal=sp)
             return HttpResponse('school is created')
+        else:
+            return HttpResponse('Invalid Data')
     return render(request,'insert_school.html',d)
